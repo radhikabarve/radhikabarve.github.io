@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retail Pricing Intelligence | Radhika Barve</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #17313b;
+      background: #f5f8f7;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #102c35;
+      color: white;
+      padding: 45px 7%;
+    }
+
+    header a {
+      color: #8be4d8;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      margin: 16px 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #17313b;
+    }
+
+    main {
+      max-width: 1250px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(175px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 23px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 18px rgba(0,0,0,.045);
+    }
+
+    .kpis .card {
+      margin-bottom: 0;
+    }
+
+    .number {
+      font-size: 34px;
+      color: #0a918b;
+      font-weight: bold;
+    }
+
+    .label {
+      color: #52656b;
+      font-size: 13px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 690px;
+      border: 0;
+    }
+
+    .note {
+      color: #5b6f73;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="../">← Back to Portfolio</a>
+
+    <h1>Retail Pricing Intelligence</h1>
+
+    <p>
+      Coles vs Woolworths | Chocolate Category Analysis
+    </p>
+
+    <p>
+      Competitive pricing, promotional intelligence
+      and evidence-backed business decisions
+    </p>
+  </header>
+
+  <main>
+
+    <!-- PROJECT KPIs -->
+    <section class="kpis">
+
+      <div class="card">
+        <div class="number">418</div>
+        <div class="label">
+          Product Listings Analysed
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="number">123</div>
+        <div class="label">
+          Candidate Matches Reviewed
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="number">57</div>
+        <div class="label">
+          Retained Matched Product Pairs
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="number">10</div>
+        <div class="label">
+          Comparisons with Cheaper-Retailer Changes
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BUSINESS PROBLEM -->
+    <section class="card">
+
+      <h2>Business Problem</h2>
+
+      <p>
+        Retailers need accurate competitor pricing insights,
+        but inconsistent product descriptions, pack sizes,
+        discounts and multibuy promotions make direct
+        price comparisons unreliable.
+      </p>
+
+      <p>
+        This project analyses chocolate pricing across
+        Coles and Woolworths to identify meaningful
+        competitive differences and prioritise
+        products requiring investigation.
+      </p>
+
+    </section>
+
+    <!-- DASHBOARD 1 -->
+    <section class="card">
+
+      <h2>1. Recorded vs Conditional Pricing</h2>
+
+      <p>
+        Comparing recorded product prices with
+        conditional Coles multibuy pricing.
+      </p>
+
+      <iframe
+        src="5_9_retailer_price_scenarios.html"
+        title="Retailer Pricing Scenarios"
+        loading="lazy">
+      </iframe>
+
+    </section>
+
+    <!-- DASHBOARD 2 -->
+    <section class="card">
+
+      <h2>2. Promotional Pricing Sensitivity</h2>
+
+      <p>
+        Investigating how promotions affect
+        apparent competitor price differences.
+      </p>
+
+      <iframe
+        src="5_9_anomaly_multibuy_sensitivity.html"
+        title="Promotional Pricing Sensitivity"
+        loading="lazy">
+      </iframe>
+
+    </section>
+
+    <!-- DASHBOARD 3 -->
+    <section class="card">
+
+      <h2>3. Commercial Priority Robustness</h2>
+
+      <p>
+        Examining the stability of pricing investigation
+        priorities under alternative scoring assumptions.
+      </p>
+
+      <iframe
+        src="FINAL_Priority_Robustness.html"
+        title="Commercial Priority Robustness"
+        loading="lazy">
+      </iframe>
+
+    </section>
+
+    <!-- KEY INSIGHTS -->
+    <section class="card">
+
+      <h2>Key Business Insights</h2>
+
+      <p>
+        <strong>Promotional competitiveness:</strong>
+        Conditional multibuy offers changed the
+        cheaper retailer for 10 matched product comparisons.
+      </p>
+
+      <p>
+        <strong>Potential markdown effects:</strong>
+        Fourteen near-double-price observations
+        require promotional context before interpretation.
+      </p>
+
+      <p>
+        <strong>Commercial priorities:</strong>
+        The analysis identified 27 recorded-price gap
+        investigations and 12 conditional multibuy
+        investigations.
+      </p>
+
+      <p class="note">
+        Data represents a cross-sectional retail snapshot.
+        Product matches were human-reviewed with additional
+        SKU consistency safeguards.
+        Multibuy prices require qualifying purchases.
+        Priority rankings are exploratory and do not
+        estimate sales or profitability uplift.
+      </p>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
