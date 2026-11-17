@@ -18,7 +18,27 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cocoa,.ring{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 <!-- Keep all narrative sections visible when this file is opened directly in Safari. -->
-<style>.reveal{opacity:1!important;transform:none!important}</style>
+<style>
+.reveal{opacity:1!important;transform:none!important}
+.business-section{background:#dff3ea}
+.application-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:48px}
+.application-card{position:relative;min-width:0;min-height:270px;padding:24px 20px;background:var(--card);border:1px solid #bad8ce;border-radius:16px}
+.application-card:not(:last-child):after{content:"→";position:absolute;z-index:2;right:-14px;top:36px;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:white;font-weight:800}
+.application-step{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--teal);color:white;font-size:12px;font-weight:850}
+.application-card h3{margin:38px 0 10px;font-size:17px}
+.application-card p{margin:0;color:var(--muted);font-size:12px}
+.application-card small{display:block;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:#3a655e;font-weight:750}
+.commercial-panel{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.commercial-panel article{padding:26px;background:#123238;color:#f7f3e8;border-radius:16px}
+.commercial-panel h3{margin:0 0 12px;font-size:17px}
+.commercial-panel p,.commercial-panel li{color:#bfd0cd;font-size:13px}
+.commercial-panel ul{margin:0;padding-left:18px}
+.kpi-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.kpi-list span{padding:8px 10px;border:1px solid #ffffff25;border-radius:999px;color:var(--mint);font-size:11px}
+.evidence-boundary{margin-top:18px;padding:18px 22px;border-left:4px solid var(--teal);background:#f9fcf8;color:#46635e;font-size:13px}
+@media(max-width:1100px){.application-flow{grid-template-columns:1fr 1fr}.application-card:not(:last-child):after{display:none}}
+@media(max-width:620px){.application-flow,.commercial-panel{grid-template-columns:1fr}.application-card{min-height:0}.application-card h3{margin-top:22px}}
+</style>
 </head>
 <body>
 <div class="progress"><span id="progress"></span></div>
@@ -88,9 +108,29 @@
   </div>
 </section>
 
+<section class="section business-section" id="application">
+  <div class="wrap">
+    <div class="chapter reveal">05 / Hypothetical business application</div>
+    <h2 class="reveal">Turn a pricing signal into a testable commercial decision.</h2>
+    <p class="lead reveal">For a hypothetical retailer, this analysis would be the prioritisation layer—not the final pricing decision. It identifies where to investigate, what intervention could be tested and how commercial impact should be measured.</p>
+    <div class="application-flow reveal">
+      <article class="application-card"><span class="application-step">1</span><h3>Verify the evidence</h3><p>Confirm product identity, current and previous prices, stock status and the conditions attached to each promotion.</p><small>Input: prioritised investigation list</small></article>
+      <article class="application-card"><span class="application-step">2</span><h3>Choose an intervention</h3><p>Select a targeted price adjustment, loyalty offer, multibuy, value message or no-action monitoring decision.</p><small>Avoid blanket discounting</small></article>
+      <article class="application-card"><span class="application-step">3</span><h3>Run a controlled pilot</h3><p>Test the intervention in selected stores, customer groups or time periods while retaining a credible comparison group.</p><small>Estimate incremental impact</small></article>
+      <article class="application-card"><span class="application-step">4</span><h3>Measure the outcome</h3><p>Evaluate unit sales alongside revenue, gross margin, basket value, repeat purchase and substitution effects.</p><small>Sales alone are not enough</small></article>
+      <article class="application-card"><span class="application-step">5</span><h3>Scale, refine or stop</h3><p>Expand only interventions that improve the chosen commercial objective without unacceptable margin or customer trade-offs.</p><small>Decision based on test evidence</small></article>
+    </div>
+    <div class="commercial-panel reveal">
+      <article><h3>Potential marketing uses</h3><ul><li>Communicate verified value advantages.</li><li>Personalise offers for price-sensitive shoppers.</li><li>Design basket-building promotions.</li><li>Plan seasonal campaigns around monitored competitor prices.</li></ul></article>
+      <article><h3>Commercial scorecard</h3><p>A successful test would improve the selected objective—not simply maximise discounted volume.</p><div class="kpi-list"><span>Units sold</span><span>Revenue</span><span>Gross margin</span><span>Basket value</span><span>Repeat purchase</span><span>Cannibalisation</span></div></article>
+    </div>
+    <div class="evidence-boundary reveal"><strong>Evidence boundary:</strong> the current cross-sectional dataset identifies opportunities for testing. Transaction data and a controlled commercial experiment would be required to claim that an intervention increased sales or profit.</div>
+  </div>
+</section>
+
 <section class="night section" id="ml">
   <div class="wrap">
-    <div class="chapter reveal">05 / Machine learning & explainability</div>
+    <div class="chapter reveal">06 / Machine learning & explainability</div>
     <h2 class="reveal">A Random Forest explains price patterns. It does not set the action list.</h2>
     <p class="lead reveal">The model predicts recorded unit price from retailer, brand, promotion flag and pack weight. Its holdout performance is shown below. Commercial prioritisation remains a separate rules-and-evidence framework.</p>
     <div class="ml-grid reveal">
@@ -101,7 +141,7 @@
 </section>
 
 <section class="section wrap" id="method">
-  <div class="chapter reveal">06 / Reproducibility & limits</div>
+  <div class="chapter reveal">07 / Reproducibility & limits</div>
   <h2 class="reveal">What the evidence can—and cannot—support.</h2>
   <p class="lead reveal">The site deliberately keeps the caveats close to the findings. Expand the sections below for a concise technical audit trail.</p>
   <div class="method-grid reveal">
@@ -112,7 +152,7 @@
   </div>
 </section>
 
-<section class="closing"><div class="wrap"><div class="chapter">07 / The decision</div><h2>Verify the condition before acting on the gap.</h2><p>For category teams, the practical next step is targeted verification: confirm product identity, current and previous price evidence, and whether a qualifying multibuy reflects a realistic shopping mission.</p></div></section>
+<section class="closing"><div class="wrap"><div class="chapter">08 / The decision</div><h2>Verify the condition, test the intervention, measure the outcome.</h2><p>The project converts inconsistent competitor listings into a prioritised decision system. It shows where a retailer should investigate and test pricing or marketing action; transaction data and controlled experiments would determine whether that action increases sales or profit.</p></div></section>
 </main>
 <footer class="footer"><span>Retail Pricing Intelligence · Radhika Barve</span><span>Source: final project CSV exports · Cross-sectional exploratory analysis</span></footer>
 <div id="tooltip" class="tooltip"></div>
